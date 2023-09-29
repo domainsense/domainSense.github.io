@@ -4,11 +4,21 @@
 <style>
   /* 添加空白区域 */
   body {
-    padding-top: 60px; /* 顶部空白区域 */
+    padding-top: 20px; /* 顶部空白区域 */
     padding-left: 70px; /* 左边空白区域 */
     padding-right: 70px; /* 右边空白区域 */
     margin: 0; /* 移除默认边距 */
     background-color: #f0f0f0; /* 背景颜色 */
+  }
+
+  /* 自定义标题样式 */
+  .company-title {
+    background-image: url('logo.jpg'); /* 设置图片背景 */
+    background-size: 100% auto; /* 图片宽度100%，高度自适应 */
+    background-repeat: no-repeat; /* 防止重复显示 */
+    text-align: center; /* 文本居中 */
+    padding: 100px 0; /* 上下边距，根据需要调整 */
+    color: white; /* 文本颜色 */
   }
 
   /* 样式化标题 */
@@ -29,6 +39,9 @@
 </style>
 </head>
 <body>
+  <div class="company-title">
+    <h1>上海域感科技有限公司</h1>
+  </div>
   <p>上海域感科技有限公司起始于2007年杭州余杭乔司捷镇马汽配经营部。自成立以来，公司一直专注于利用先进计算机应用技术改进社会生产效率。经过多年不懈努力与发展，公司现有工业生产、商业流通、医疗、教育、家居等领域成熟智能化系统解决方案，并提供智能软硬件租赁服务和相关技术支持服务。公司以智慧赋能为使命，努力提高各行业生产效率提供高效、智能的解决方案。</p>
   <h1>公司产品</h1>
   <h2>视频分析系统</h2>
@@ -72,6 +85,6 @@
     <li><a href="https://scikit-learn.org/stable/">scikit-learn官网</a></li>
     <li><a href="https://tensorflow.google.cn/?hl=zh-cn">TensorFlow</a></li>
     <li><a href="https://pytorch.org/">PyTorch</a></li>
-</ul>
+  </ul>
 </body>
 </html>
