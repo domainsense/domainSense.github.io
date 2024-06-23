@@ -15,8 +15,8 @@
   }
 
   .header {
-    background: url('logo.png') no-repeat center center;
-    background-size: cover;
+    background: url('logo.png') no-repeat center top;
+    background-size: contain;
     text-align: center;
     color: white;
     padding: 200px 0;
@@ -27,12 +27,11 @@
   .header h1 {
     margin: 0;
     font-size: 2em;
-    position: relative;
+    position: absolute;
     width: 100%;
-  }
-
-  .header h1:first-child {
     top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
 
   .header h1:last-child {
@@ -68,30 +67,33 @@
 
   @media (max-width: 768px) {
     .header {
-      background-size: contain;
       padding: 100px 0;
     }
 
     .header h1 {
       font-size: 1.5em;
+      position: static;
+      transform: none;
+    }
+
+    .header h1:last-child {
+      top: auto;
     }
   }
 
   @media (max-width: 480px) {
     .header {
-      background-size: contain;
       padding: 50px 0;
     }
 
     .header h1 {
       font-size: 1.2em;
+      position: static;
+      transform: none;
     }
 
-    .header h1:first-child,
     .header h1:last-child {
       top: auto;
-      transform: translateY(0);
-      display: block;
     }
   }
 </style>
