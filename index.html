@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>上海域感科技有限公司</title>
+<title>智能科技企业门户</title>
 <style>
   :root {
     --primary-blue: #0056b3;
@@ -20,7 +20,8 @@
     align-items: center;
     background: 
       linear-gradient(rgba(255,255,255,0.25), rgba(255,255,255,0.25)),
-      url('logo.png') no-repeat center/contain; /* Ensure 'logo.png' is in the correct path */
+      url('logo.png') no-repeat center; /* 确保 'logo.png' 在正确路径 */
+    background-size: 80% auto; /* 减小背景图片大小 */
     filter: var(--text-brightness) contrast(1.1);
     position: relative;
     max-width: 1200px; /* 设置最大宽度 */
@@ -29,21 +30,18 @@
 
   /* 标题通用样式 */
   .header h1 {
-    margin: 1rem 0;
-    font-size: 2.5rem;
+    margin: 0.5rem 0; /* 调整间距 */
+    font-size: 1.8rem; /* 减小字体大小 */
     color: rgba(0,86,179,0.9);
     text-shadow: 2px 2px 4px rgba(255,255,255,0.5);
     display: inline-block;
-    padding: 0.5rem 2rem;
-    background: rgba(255,255,255,0.8);
-    border-radius: 8px;
+    padding: 0.5rem 0; /* 移除背景后调整内边距 */
   }
 
   /* 重点标题优化 */
   .header h1:nth-child(2) {
-    font-size: 3.5rem;
+    font-size: 2rem; /* 减小字体大小 */
     color: var(--accent-gold);
-    background: rgba(0,86,179,0.9);
     animation: glow 1.5s ease-in-out infinite alternate;
     text-decoration: none; /* 强制去除下划线 */
   }
@@ -57,37 +55,34 @@
   /* 响应式适配 */
   @media (max-width: 992px) {
     .header h1 {
-      font-size: 2rem;
-      padding: 0.5rem 1.5rem;
+      font-size: 1.5rem; /* 减小字体大小 */
     }
     .header h1:nth-child(2) {
-      font-size: 2.8rem;
+      font-size: 1.8rem; /* 减小字体大小 */
     }
   }
 
   @media (max-width: 768px) {
     .header {
-      background-size: 90% auto;
+      background-size: 70% auto; /* 调整背景大小 */
     }
     .header h1 {
-      font-size: 1.8rem;
-      padding: 0.5rem 1rem;
+      font-size: 1.2rem; /* 减小字体大小 */
     }
     .header h1:nth-child(2) {
-      font-size: 2.2rem;
+      font-size: 1.5rem; /* 减小字体大小 */
     }
   }
 
   @media (max-width: 480px) {
     .header {
-      background-size: 85% auto;
+      background-size: 60% auto; /* 调整背景大小 */
     }
     .header h1 {
-      font-size: 1.5rem;
-      padding: 0.5rem;
+      font-size: 1rem; /* 减小字体大小 */
     }
     .header h1:nth-child(2) {
-      font-size: 1.8rem;
+      font-size: 1.2rem; /* 减小字体大小 */
     }
   }
 
