@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>智能科技企业门户</title>
+<title>上海域感科技有限公司</title>
 <style>
   :root {
     --primary-blue: #0056b3;
@@ -23,6 +23,8 @@
       url('logo.png') no-repeat center/contain; /* Ensure 'logo.png' is in the correct path */
     filter: var(--text-brightness) contrast(1.1);
     position: relative;
+    max-width: 1200px; /* 设置最大宽度 */
+    margin: 0 auto; /* 居中对齐 */
   }
 
   /* 标题通用样式 */
@@ -101,21 +103,23 @@
   /* 设置容器内容的样式 */
   .container {
     padding: 2rem;
+    max-width: 1200px; /* 设置最大宽度 */
+    margin: 0 auto; /* 居中对齐 */
   }
 </style>
 </head>
 <body>
   <script>
-// 动态背景尺寸调整
-function adjustBackground() {
-  const header = document.querySelector('.header');
-  const titles = document.querySelectorAll('.header h1');
-  const maxWidth = Math.max(...Array.from(titles).map(t => t.offsetWidth));
-  
-  header.style.backgroundSize = `${maxWidth * 1.2}px auto`;
-}
-window.addEventListener('resize', adjustBackground);
-window.addEventListener('load', adjustBackground);
+    // 动态背景尺寸调整
+    function adjustBackground() {
+      const header = document.querySelector('.header');
+      const titles = document.querySelectorAll('.header h1');
+      const maxWidth = Math.max(...Array.from(titles).map(t => t.offsetWidth));
+      
+      header.style.backgroundSize = `${maxWidth * 1.2}px auto`;
+    }
+    window.addEventListener('resize', adjustBackground);
+    window.addEventListener('load', adjustBackground);
   </script>
 
   <div class="header">
@@ -123,6 +127,7 @@ window.addEventListener('load', adjustBackground);
     <h1>睿戈智能科技（沈阳）有限公司</h1>
     <h1>东北大学REAL实验室</h1>
   </div>
+
   <div class="container">
     <p>东北大学REAL实验室，睿戈智能科技（沈阳）有限公司，上海域感科技有限公司，由美国卡耐基梅隆大学机器人研究中心博士后、东北大学博士生导师硕士生导师<a href="http://faculty.neu.edu.cn/fangzheng/zh_CN/index/55328/list/index.htm" target="_blank">方正教授</a>创立。睿戈智能是东北大学科技成果孵化的高科技企业，于2023年11月份完成了核心技术知识产权转化。公司基于空间智能（Spatial AI）自有核心技术进行全自主无人系统研发、生产、销售与服务。公司团队掌握国际领先水平的空间环境感知与自主探索技术，致力于提供面向于公共安全（警用）、智能采矿、智慧农业以及军事侦查等领域的空间探索解决方案和移动机器人产品。</p>
     <h2>公司产品</h2>
