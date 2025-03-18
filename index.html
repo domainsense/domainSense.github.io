@@ -3,70 +3,60 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>上海域感科技有限公司</title>
+<title>智能科技企业门户</title>
 <style>
   :root {
-    --primary-color: #0056b3;
-    --accent-color: #FFD700;
-    --text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    --primary-blue: #0056b3;
+    --accent-gold: #FFD700;
+    --text-brightness: brightness(1.2);
   }
 
+  /* 核心布局系统 */
   .header {
-    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
-                url('logo.png') no-repeat center/contain;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 2rem;
-    text-align: center;
+    background: 
+      linear-gradient(rgba(255,255,255,0.25), rgba(255,255,255,0.25)),
+      url('logo.png') no-repeat center/contain;
+    filter: var(--text-brightness) contrast(1.1);
+    position: relative;
   }
 
+  /* 标题通用样式 */
   .header h1 {
     margin: 1rem 0;
     font-size: 2.5rem;
-    color: rgba(255,255,255,0.9);
-    text-shadow: var(--text-shadow);
-    transition: transform 0.3s ease;
+    color: rgba(0,86,179,0.9);
+    text-shadow: 2px 2px 4px rgba(255,255,255,0.5);
+    display: inline-block;
+    padding: 0.5rem 2rem;
+    background: rgba(255,255,255,0.8);
+    border-radius: 8px;
   }
 
+  /* 重点标题优化 */
   .header h1:nth-child(2) {
     font-size: 3.5rem;
-    color: var(--accent-color);
-    position: relative;
-    padding: 0 2rem;
-    animation: highlight 1.5s ease-in-out infinite alternate;
+    color: var(--accent-gold);
+    background: rgba(0,86,179,0.9);
+    animation: glow 1.5s ease-in-out infinite alternate;
+    text-decoration: none; /* 强制去除下划线[1,3,9](@ref) */
   }
 
-  .header h1:nth-child(2)::before,
-  .header h1:nth-child(2)::after {
-    content: '';
-    position: absolute;
-    height: 3px;
-    background: var(--accent-color);
-    width: 40%;
-    bottom: -10px;
+  /* 动态光效 */
+  @keyframes glow {
+    from { box-shadow: 0 0 10px var(--accent-gold); }
+    to { box-shadow: 0 0 30px var(--accent-gold); }
   }
 
-  .header h1:nth-child(2)::before {
-    left: 0;
-    transform-origin: left;
-  }
-
-  .header h1:nth-child(2)::after {
-    right: 0;
-    transform-origin: right;
-  }
-
-  @keyframes highlight {
-    from { text-shadow: 0 0 10px var(--accent-color); }
-    to { text-shadow: 0 0 20px var(--accent-color), 0 0 30px var(--accent-color); }
-  }
-
+  /* 响应式适配 */
   @media (max-width: 992px) {
     .header h1 {
       font-size: 2rem;
+      padding: 0.5rem 1.5rem;
     }
     .header h1:nth-child(2) {
       font-size: 2.8rem;
@@ -75,20 +65,24 @@
 
   @media (max-width: 768px) {
     .header {
-      background-size: cover;
+      background-size: 90% auto;
     }
     .header h1 {
       font-size: 1.8rem;
+      padding: 0.5rem 1rem;
     }
     .header h1:nth-child(2) {
       font-size: 2.2rem;
-      padding: 0 1rem;
     }
   }
 
   @media (max-width: 480px) {
+    .header {
+      background-size: 85% auto;
+    }
     .header h1 {
       font-size: 1.5rem;
+      padding: 0.5rem;
     }
     .header h1:nth-child(2) {
       font-size: 1.8rem;
