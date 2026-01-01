@@ -26,12 +26,14 @@
 
     /* 导航栏样式 - 仅在main-container内，宽度与内容块一致 */
     .nav {
+      /* 移除导航栏自身的100%宽度，改为背景仅包裹内部容器 */
       background-color: #0056b3;
-      width: 100%;
       position: sticky;
       top: 0;
       z-index: 100;
       box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      display: flex;
+      justify-content: center; /* 让内部容器居中，背景仅覆盖容器宽度 */
     }
     .nav .main-container {
       display: flex;
@@ -40,6 +42,7 @@
       gap: 20px;
       padding: 15px 0;
       flex-wrap: nowrap;
+      width: 100%; /* 确保内部容器占满居中后的宽度 */
     }
     .nav-item {
       color: white;
@@ -142,9 +145,10 @@
   <!-- 导航栏 - 宽度与content完全一致 -->
   <nav class="nav">
     <div class="main-container">
+      <!-- 1. 修改默认激活项为产品介绍 -->
       <div class="nav-item" data-target="company-intro">公司介绍</div>
-      <div class="nav-item" data-target="product-intro">产品介绍</div>
-      <div class="nav-item active" data-target="contact-us">联系我们</div>
+      <div class="nav-item active" data-target="product-intro">产品介绍</div>
+      <div class="nav-item" data-target="contact-us">联系我们</div>
     </div>
   </nav>
 
@@ -163,7 +167,8 @@
     </section>
 
     <!-- 产品介绍板块 -->
-    <section id="product-intro" class="section">
+    <!-- 2. 修改默认显示项为产品介绍 -->
+    <section id="product-intro" class="section active">
       <h3 class="sub-title">公司部分待转让专利技术</h3>
       <ul class="content-list">
         <li>基于UWB+Mesh的机器人集群通信设备</li>
@@ -208,7 +213,8 @@
     </section>
 
     <!-- 联系我们板块 -->
-    <section id="contact-us" class="section active">
+    <!-- 3. 取消联系我们的默认显示 -->
+    <section id="contact-us" class="section">
       <h3 class="sub-title">招贤纳士</h3>
       <p class="content-p">我们因业务高速发展需求，现面向社会及高校，诚聘机器人、机电一体化、信息、计算机等相关专业的全职精英与在校生实习生，邀你一同解锁技术边界，共创行业价值！岗位方向涵盖四大类，一是机器人研发类，主要参与机器人本体设计、运动控制算法开发、整机调试等工作，推动产品迭代升级；二是机电一体化类，负责机电系统集成、自动化设备设计、硬件选型与测试，保障设备稳定高效运行；三是信息技术类，聚焦嵌入式开发、数据通信、系统优化，为智能产品搭建可靠的技术底座；四是计算机技术类，主攻软件架构设计、算法研发、人机交互开发，赋能产品智能化升级。</p>
       <p class="content-p">我们期待这样的你：本科及以上学历（实习生可放宽至在读专科/本科），机器人、机电一体化、信息工程、计算机科学与技术等相关专业；对智能装备、自动化技术抱有浓厚兴趣，具备扎实的专业理论基础，热衷动手实践与技术钻研；全职岗位需具备相关项目经验或实习经历者优先，实习生需保证稳定的实习时长，态度积极，学习能力强；具备良好的团队协作意识、沟通能力与抗压能力，敢于突破创新，勇于接受技术挑战。</p>
