@@ -18,31 +18,27 @@
       line-height: 1.8;
     }
 
-    /* 统一容器：导航栏和内容块共用，宽度完全一致 */
-    .main-container {
-      max-width: 900px; /* 宽度与内容块一致 */
-      margin: 0 auto;   /* 居中对齐 */
+    /* 核心：内容容器（导航+内容块共用） */
+    .content-wrapper {
+      max-width: 900px; /* 与内容块宽度一致 */
+      margin: 0 auto;   /* 居中 */
     }
 
-    /* 导航栏样式 - 仅在main-container内，宽度与内容块一致 */
+    /* 导航栏：蓝色背景仅在content-wrapper内 */
     .nav {
-      /* 移除导航栏自身的100%宽度，改为背景仅包裹内部容器 */
       background-color: #0056b3;
       position: sticky;
       top: 0;
       z-index: 100;
       box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-      display: flex;
-      justify-content: center; /* 让内部容器居中，背景仅覆盖容器宽度 */
     }
-    .nav .main-container {
+    .nav .content-wrapper {
       display: flex;
       justify-content: center;
       align-items: center;
       gap: 20px;
       padding: 15px 0;
       flex-wrap: nowrap;
-      width: 100%; /* 确保内部容器占满居中后的宽度 */
     }
     .nav-item {
       color: white;
@@ -58,7 +54,7 @@
       background-color: #004085;
     }
 
-    /* 内容板块样式 - 宽度与导航栏完全一致 */
+    /* 内容板块：宽度与导航栏一致 */
     .section {
       background: white;
       padding: 40px 60px;
@@ -103,12 +99,12 @@
       line-height: 2;
     }
 
-    /* 移动端适配 - 宽度仍保持一致 */
+    /* 移动端适配 */
     @media (max-width: 768px) {
-      .main-container {
-        max-width: calc(100% - 20px); /* 与内容块边距一致 */
+      .content-wrapper {
+        max-width: calc(100% - 20px);
       }
-      .nav .main-container {
+      .nav .content-wrapper {
         gap: 10px;
         padding: 12px 0;
       }
@@ -127,33 +123,20 @@
         max-width: 100%;
       }
     }
-    @media (max-width: 480px) {
-      .nav .main-container {
-        gap: 8px;
-      }
-      .nav-item {
-        font-size: 13px;
-        padding: 5px 8px;
-      }
-      .content-list {
-        margin-left: 1em;
-      }
-    }
   </style>
 </head>
 <body>
-  <!-- 导航栏 - 宽度与content完全一致 -->
+  <!-- 导航栏：蓝色背景仅在content-wrapper内 -->
   <nav class="nav">
-    <div class="main-container">
-      <!-- 1. 修改默认激活项为产品介绍 -->
+    <div class="content-wrapper">
       <div class="nav-item" data-target="company-intro">公司介绍</div>
       <div class="nav-item active" data-target="product-intro">产品介绍</div>
       <div class="nav-item" data-target="contact-us">联系我们</div>
     </div>
   </nav>
 
-  <!-- 内容容器 - 与导航栏共用main-container -->
-  <div class="main-container">
+  <!-- 内容容器：与导航栏共用content-wrapper -->
+  <div class="content-wrapper">
     <!-- 公司介绍板块 -->
     <section id="company-intro" class="section">
       <p class="content-p">公司深耕具身智能领域，聚焦检测、控制和规划核心技术研发，构建了从底层算法突破到产品落地应用、从系统集成部署到场景化服务落地的完整业务体系。通过分布式计算、分层控制等核心技术手段，实现智能体在复杂动态环境中的精准感知、智能决策与高效执行，为多场景智能化应用提供稳定可靠的技术支撑。</p>
@@ -166,8 +149,7 @@
       </div>
     </section>
 
-    <!-- 产品介绍板块 -->
-    <!-- 2. 修改默认显示项为产品介绍 -->
+    <!-- 产品介绍板块（默认显示） -->
     <section id="product-intro" class="section active">
       <h3 class="sub-title">公司部分待转让专利技术</h3>
       <ul class="content-list">
@@ -213,7 +195,6 @@
     </section>
 
     <!-- 联系我们板块 -->
-    <!-- 3. 取消联系我们的默认显示 -->
     <section id="contact-us" class="section">
       <h3 class="sub-title">招贤纳士</h3>
       <p class="content-p">我们因业务高速发展需求，现面向社会及高校，诚聘机器人、机电一体化、信息、计算机等相关专业的全职精英与在校生实习生，邀你一同解锁技术边界，共创行业价值！岗位方向涵盖四大类，一是机器人研发类，主要参与机器人本体设计、运动控制算法开发、整机调试等工作，推动产品迭代升级；二是机电一体化类，负责机电系统集成、自动化设备设计、硬件选型与测试，保障设备稳定高效运行；三是信息技术类，聚焦嵌入式开发、数据通信、系统优化，为智能产品搭建可靠的技术底座；四是计算机技术类，主攻软件架构设计、算法研发、人机交互开发，赋能产品智能化升级。</p>
