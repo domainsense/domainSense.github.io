@@ -21,6 +21,20 @@
       background: white;
     }
 
+    /* 新版header样式 - 已删除背景图片相关设置 */
+    .header {
+      width: 100%;
+      /* 移除了背景图片相关代码 */
+      background-color: #0056b3; /* 替换为纯色背景，更协调 */
+      color: white;
+      position: relative;
+      min-height: 120px;      /* 调整高度，适配无图片的样式 */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+
     /* 标题容器 */
     .header-content {
       max-width: 1200px;
@@ -87,7 +101,7 @@
 
     @media (max-width: 768px) {
       .header {
-        min-height: 300px;
+        min-height: 100px; /* 适配移动端高度 */
       }
       .header h1 {
         font-size: 1.5em;
@@ -96,7 +110,7 @@
 
     @media (max-width: 480px) {
       .header {
-        min-height: 200px;
+        min-height: 80px; /* 适配小屏手机高度 */
       }
       .header h1 {
         font-size: 1.2em;
@@ -110,6 +124,8 @@
 <body>
 <div class="header">
   <div class="header-content">
+    <!-- 补充公司标题，让顶部区域更完整 -->
+    <h1>上海域感科技有限公司</h1>
   </div>
 </div>
 
@@ -170,21 +186,3 @@
 </div>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
