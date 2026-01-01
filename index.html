@@ -18,7 +18,7 @@
       line-height: 1.8;
     }
 
-    /* 导航栏样式 - 固定顶部，方便跳转 */
+    /* 导航栏样式 - 固定顶部 */
     .nav {
       background-color: #0056b3;
       width: 100%;
@@ -45,14 +45,15 @@
       padding: 8px 15px;
       border-radius: 4px;
       transition: background-color 0.3s;
+      cursor: pointer; /* 标记为可点击 */
     }
 
-    .nav-item:hover {
+    .nav-item:hover, .nav-item.active {
       background-color: #004085;
       text-decoration: none;
     }
 
-    /* 通用容器样式 */
+    /* 通用容器样式 - 默认隐藏，只显示激活的板块 */
     .section {
       max-width: 1200px;
       margin: 30px auto;
@@ -60,6 +61,10 @@
       padding: 30px;
       border-radius: 8px;
       box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      display: none; /* 默认隐藏所有板块 */
+    }
+    .section.active {
+      display: block; /* 激活的板块显示 */
     }
 
     /* 板块标题样式 */
@@ -157,17 +162,17 @@
   </style>
 </head>
 <body>
-  <!-- 导航栏 -->
+  <!-- 导航栏（点击切换板块） -->
   <nav class="nav">
     <div class="nav-container">
-      <a href="#company-intro" class="nav-item">公司介绍</a>
-      <a href="#product-intro" class="nav-item">产品介绍</a>
-      <a href="#contact-us" class="nav-item">联系我们</a>
+      <div class="nav-item active" data-target="company-intro">公司介绍</div>
+      <div class="nav-item" data-target="product-intro">产品介绍</div>
+      <div class="nav-item" data-target="contact-us">联系我们</div>
     </div>
   </nav>
 
   <!-- 公司介绍板块 -->
-  <section id="company-intro" class="section">
+  <section id="company-intro" class="section active">
     <h2 class="section-title">公司介绍</h2>
     <p class="content-p">公司深耕具身智能领域的检测、控制、规划核心技术研发，构建了从底层算法突破到产品落地应用、从系统集成部署到场景化服务落地的完整业务体系。通过分布式计算、分层控制等核心技术手段，实现智能体在复杂动态环境中的精准感知、智能决策与高效执行，为多场景智能化应用提供稳定可靠的技术支撑。</p>
     <p class="content-p">依托国家数字化转型与智能制造产业扶持政策，域感科技以“技术赋能智能升级”为使命，专注于为工业生产、物流仓储、智能服务等领域提供智能化解决方案。公司凭借自主核心技术，助力客户提升运营效率、降低人力成本，推动传统行业数字化转型。</p>
@@ -242,5 +247,28 @@
       <p>📧 联系邮箱：921021872@qq.com</p>
     </div>
   </section>
+
+  <!-- 控制板块显示/隐藏的JS -->
+  <script>
+    // 获取所有导航项和板块
+    const navItems = document.querySelectorAll('.nav-item');
+    const sections = document.querySelectorAll('.section');
+
+    // 给每个导航项绑定点击事件
+    navItems.forEach(item => {
+      item.addEventListener('click', () => {
+        // 1. 移除所有导航项的active类
+        navItems.forEach(nav => nav.classList.remove('active'));
+        // 2. 给当前点击的导航项添加active类
+        item.classList.add('active');
+        
+        // 3. 获取目标板块的ID
+        const targetId = item.getAttribute('data-target');
+        // 4. 隐藏所有板块，显示目标板块
+        sections.forEach(sec => sec.classList.remove('active'));
+        document.getElementById(targetId).classList.add('active');
+      });
+    });
+  </script>
 </body>
 </html>
