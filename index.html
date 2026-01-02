@@ -224,18 +224,28 @@
     </div>
   </div>
 
-  <!-- 控制板块显示/隐藏的JS + 插入联系方式 -->
+  <!-- 控制板块显示/隐藏的JS + 插入联系方式 + 滚动到顶部 -->
   <script>
-    // 1. 导航切换逻辑（原有逻辑保留）
+    // 1. 导航切换逻辑（新增滚动到顶部）
     const navItems = document.querySelectorAll('.nav-item');
     const sections = document.querySelectorAll('.section');
     navItems.forEach(item => {
       item.addEventListener('click', () => {
+        // 切换导航激活状态
         navItems.forEach(nav => nav.classList.remove('active'));
         item.classList.add('active');
+        
+        // 切换板块显示状态
         const targetId = item.getAttribute('data-target');
         sections.forEach(sec => sec.classList.remove('active'));
-        document.getElementById(targetId).classList.add('active');
+        const targetSection = document.getElementById(targetId);
+        targetSection.classList.add('active');
+        
+        // 核心：滚动到目标板块顶部
+        targetSection.scrollIntoView({
+          behavior: 'smooth', // 平滑滚动（可选，去掉则瞬间跳转）
+          block: 'start'      // 精准对齐板块顶部
+        });
       });
     });
 
