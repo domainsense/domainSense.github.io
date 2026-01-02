@@ -99,6 +99,11 @@
       line-height: 2;
     }
 
+    /* 隐藏联系方式模板 */
+    #contact-template {
+      display: none;
+    }
+
     /* 移动端适配 */
     @media (max-width: 768px) {
       .content-wrapper {
@@ -131,7 +136,7 @@
     <div class="content-wrapper">
       <div class="nav-item" data-target="company-intro">公司介绍</div>
       <div class="nav-item active" data-target="product-intro">产品介绍</div>
-      <div class="nav-item" data-target="contact-us">加入我们</div>
+      <div class="nav-item" data-target="join-us">加入我们</div>
     </div>
   </nav>
 
@@ -142,19 +147,14 @@
       <p class="content-p">公司深耕具身智能领域，聚焦检测、控制和规划核心技术研发，构建了从底层算法突破到产品落地应用、从系统集成部署到场景化服务落地的完整业务体系。通过分布式计算、分层控制等核心技术手段，实现智能体在复杂动态环境中的精准感知、智能决策与高效执行，为多场景智能化应用提供稳定可靠的技术支撑。</p>
       <p class="content-p">依托国家数字化转型与智能制造产业扶持政策，域感科技以“技术赋能智能升级”为使命，专注于为工业生产、物流仓储、智能服务等领域提供智能化解决方案。公司凭借自主核心技术，助力客户提升运营效率、降低人力成本，推动传统行业数字化转型。</p>
       <p class="content-p">未来，域感科技将持续聚焦机器人技术创新，深化多领域场景应用，致力于成为国内领先的智能机器人核心技术提供商与行业解决方案服务商，为智能制造与数字经济发展注入新动能。</p>
-<p class="content-p">欢迎有资金资源、技术资源、市场资源等各类企业发展所需资源的战略合作伙伴，以各种方式展开合作，共同成就未来。</p>
+      <p class="content-p">欢迎有资金资源、技术资源、市场资源等各类企业发展所需资源的战略合作伙伴，以各种方式展开合作，共同成就未来。</p>
 
       <h3 class="sub-title">部分合作伙伴</h3>
       <div class="partner-img">
         <img src="合作伙伴.png" alt="合作伙伴">
       </div>
 
-<h3 class="sub-title">联系方式</h3>
-      <div class="contact-box">
-        <p>📌 公司地址：上海市松江区车墩镇莘莘路1弄8号1577</p>
-        <p>📧 公司邮箱：921021872@qq.com</p>
-      </div>
-
+      <!-- 联系方式会通过JS插入到这里 -->
     </section>
 
     <!-- 产品介绍板块（默认显示） -->
@@ -201,30 +201,32 @@
       <h4 style="margin: 15px 0 10px; color: #004085;">智能仓储系统</h4>
       <p class="content-p">基于自动化存储设备、货物识别和跟踪、自动化分拣和装载、库存管理和优化、物联网和通信技术、人机协作等实现无人化仓储、库存管理和货物跟踪。系统有助于提高存储效率、降低人力成本、减少错误和提高货物跟踪的准确性。可广泛应用于电子商务和零售业、制造业、医疗保健、食品和饮料行业、物流和运输、航空业和农业。</p>
 
-<h3 class="sub-title">联系方式</h3>
-      <div class="contact-box">
-        <p>📌 公司地址：上海市松江区车墩镇莘莘路1弄8号1577</p>
-        <p>📧 公司邮箱：921021872@qq.com</p>
-      </div>
+      <!-- 联系方式会通过JS插入到这里 -->
     </section>
 
-    <!-- 联系我们板块 -->
-    <section id="contact-us" class="section">
+    <!-- 加入我们板块 -->
+    <section id="join-us" class="section">
       <p class="content-p">因公司业务高速发展，现面向社会精英及高校学子，诚聘机器人、机电一体化、信息技术、计算机等相关专业的全职人才与在校生实习生，邀你一同解锁技术边界，共创行业价值！岗位方向涵盖五大类：1. 机器人研发类，主要参与机器人本体设计、运动控制算法开发、整机调试等工作，推动产品迭代升级；2. 机电一体化类，负责机电系统集成、自动化设备设计、硬件选型与测试，保障设备稳定高效运行；3. 信息技术类，聚焦嵌入式开发、数据通信、系统优化，为智能产品搭建可靠的技术底座；4. 计算机技术类，主攻软件架构设计、算法研发、人机交互开发，赋能产品智能化升级；5. 市场营销类，主攻公司自研产品的市场推广，需具备行业多产品成功运作经验、丰富的行业产品销售人脉以及扎实的市场营销企业管理理论功底。</p>
       <p class="content-p">我们期待这样的你：本科及以上学历（实习生可放宽至在读专科/本科），机器人、机电一体化、信息工程、计算机科学与技术等相关专业；对智能装备、自动化技术抱有浓厚兴趣，具备扎实的专业理论基础，热衷动手实践与技术钻研；全职岗位需具备相关项目经验或实习经历者优先，实习生需保证稳定的实习时长，态度积极，学习能力强；具备良好的团队协作意识、沟通能力与抗压能力，敢于突破创新，勇于接受技术挑战。</p>
       <p class="content-p">我们将为你提供有竞争力的薪酬福利，包含底薪+绩效奖金+项目提成+年终分红，具体待遇面议，价值与回报成正比；完善的成长体系，有一对一导师带教、定期技术培训、行业前沿交流研讨会，助力你快速提升专业能力；广阔的发展平台，可参与核心项目研发，接触行业顶尖技术与资源，拥有清晰的职业晋升通道，让你的才华不被埋没；舒适的工作氛围，实行扁平化管理，打造开放包容的团队文化，五险一金、带薪年假、节日福利、定期团建等福利齐全；还有实习生专属福利，包含实习补贴、实习证明、转正绿色通道，表现优异者可直接留用。</p>
       <p class="content-p">应聘方式为将简历投递至公司邮箱，邮件主题命名格式为应聘岗位-姓名-专业-全职/实习，我们尊重每一份才华，更珍惜每一份热忱，期待与你并肩同行，用技术赋能产业，用创新点亮未来！</p>
 
-      <h3 class="sub-title">联系方式</h3>
-      <div class="contact-box">
-        <p>📌 公司地址：上海市松江区车墩镇莘莘路1弄8号1577</p>
-        <p>📧 公司邮箱：921021872@qq.com</p>
-      </div>
+      <!-- 联系方式会通过JS插入到这里 -->
     </section>
   </div>
 
-  <!-- 控制板块显示/隐藏的JS -->
+  <!-- 独立的联系方式模板（隐藏） -->
+  <div id="contact-template">
+    <h3 class="sub-title">联系方式</h3>
+    <div class="contact-box">
+      <p>📌 公司地址：上海市松江区车墩镇莘莘路1弄8号1577</p>
+      <p>📧 公司邮箱：921021872@qq.com</p>
+    </div>
+  </div>
+
+  <!-- 控制板块显示/隐藏的JS + 插入联系方式 -->
   <script>
+    // 1. 导航切换逻辑（原有逻辑保留）
     const navItems = document.querySelectorAll('.nav-item');
     const sections = document.querySelectorAll('.section');
     navItems.forEach(item => {
@@ -235,6 +237,20 @@
         sections.forEach(sec => sec.classList.remove('active'));
         document.getElementById(targetId).classList.add('active');
       });
+    });
+
+    // 2. 插入联系方式到所有板块
+    window.addEventListener('DOMContentLoaded', () => {
+      // 获取联系方式模板的副本
+      const contactTemplate = document.getElementById('contact-template');
+      const contactContent = contactTemplate.cloneNode(true);
+      contactContent.removeAttribute('id'); // 移除模板的id，避免重复
+      contactContent.style.display = 'block'; // 显示副本
+
+      // 分别插入到三个板块的末尾
+      document.getElementById('company-intro').appendChild(contactContent.cloneNode(true));
+      document.getElementById('product-intro').appendChild(contactContent.cloneNode(true));
+      document.getElementById('join-us').appendChild(contactContent.cloneNode(true));
     });
   </script>
 </body>
